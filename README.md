@@ -27,3 +27,10 @@ Iterative threshold attempts to find a good threshold to separate the image into
 Run with python2 its.py \<relative path to image\>
 
 Outputs: The segmented binary image after Iterative Threshold Selection
+
+##VectorMedianFilter
+On a multi-channel image such as a RGB color image, applying the Median Filter to each separate color channel can introduce colors to the output image that were not present in the original image. To fix this, we can combine the color channels into vectors so that each pixel is a vector. Then we can compare the euclidean distance between vectors in a kernel to get the median vector. Since the median vector will always be a RGB combination that was in the original image, we won't add any fake colors to the image.
+
+Run with python2 vmf.py \<relateice path to image\> \<frequency of noise(percent expressed as a decimal)\> \<size of the kernel(odd integer)\>
+
+Outputs: The image with noise added, the image filtered with median filter on individual color channels, the image filtered with vector median filter, a file containing the PSNR of the two filtered images   
