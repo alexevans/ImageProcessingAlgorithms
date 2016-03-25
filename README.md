@@ -20,3 +20,10 @@ Roberts and Sobel edge detection. Roberts applies the 2x2 Roberts cross operator
 Run with python2 roberts_sobel_edge.py \<relative path to image\>
 
 Outputs: The image after Roberts edge detection and the image after Sobel edge detection.
+
+##IterativeThresholdSelection
+Iterative threshold attempts to find a good threshold to separate the image into two classes iteratively. It initially guesses that the best threshold is the mean pixel value in the image. It then compares this guess to the average of the average of the pixels above the threshold and the average of the pixels below the threshold, taking this new average as its next guess. It repeats this process until the the new average converges with its previous guess.
+
+Run with python2 its.py \<relative path to image\>
+
+Outputs: The segmented binary image after Iterative Threshold Selection
